@@ -1,17 +1,18 @@
-import { Field, Formik } from "formik"
+import { Formik, Form, Field } from 'formik';
 
-export default function SearchBar () {
+export default function SearchBar({ onSearch }) {
     return (
         <Formik 
-        initialValues={{search: ""}}
-        onSubmit={(values, actions) => {
-            console.log(values);
-            actions.resetForm();
-        }}>
-            <form>
-                <Field name='seacrh' placeholder="Search images and photos" />
+            initialValues={{ search: "" }}
+            onSubmit={(values, actions) => {
+                onSearch(values.search);
+                actions.resetForm();
+            }}
+        >
+            <Form>
+                <Field name='search' placeholder="Search images and photos" />
                 <button type="submit">Search</button>
-            </form>
+            </Form>
         </Formik>
-    )
+    );
 }
