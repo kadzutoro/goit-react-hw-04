@@ -20,10 +20,8 @@ const App = () => {
       try {
         setIsLoading(true);
         setError(false);
-        const data = await fetchImages(query, page);
-        setImages(( prevImages ) => {
-          return [...prevImages, ...data]
-        });
+        const data = await fetchImages({query, page});
+        setImages( prevImages => [...prevImages, ...data]);
       } catch (e) {
         setError(true);
       } finally {
@@ -31,7 +29,7 @@ const App = () => {
       }
     }
     getData()
-  }, [page, query])
+  }, [page, query]) 
 
   const handleSearch =  (newQuery) => {
     setQuery(newQuery)
