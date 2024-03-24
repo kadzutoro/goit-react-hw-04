@@ -6,19 +6,14 @@ import css from "./SearchBar.module.css"
 export default function SearchBar({ onSearch }) {
 
     const handleSubmit = (values, actions) => {
-        onSearch(values.search);
-        actions.resetForm();
-    };
-
-    const handleSubmt = e => {
-        e.preventDefault();
-        const searchQuery = e.target.elements.search.value;
+        const searchQuery = values.search;
         if (!searchQuery.trim()) {
             toast('Type something to search', { duration: 2000, position: 'top-right' });
             return;
         }
-
+        
         onSearch(searchQuery);
+        actions.resetForm();
     };
 
     return (
@@ -27,7 +22,7 @@ export default function SearchBar({ onSearch }) {
                 initialValues={{ search: "" }}
                 onSubmit={handleSubmit}
             >
-                <Form onSubmit={handleSubmt} className={css.form}>
+                <Form className={css.form}>
                     <div className={css.searchBox}>
                         <Field className={css.imput} name='search' placeholder="Search images and photos" />
                         <button className={css.button} type="submit"><IoSearchOutline /></button>
