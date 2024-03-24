@@ -1,0 +1,8 @@
+.imageWrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+  .image {
+    height: 70vh;
+  }

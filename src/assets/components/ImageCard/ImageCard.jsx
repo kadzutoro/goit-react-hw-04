@@ -1,11 +1,11 @@
-
+import css from './ImageCard.module.css'
 
 const ImageCard = ({
     image: { alt_description, urls, user, likes, description, color },
     openModal,  
 }) => {
     return (
-        <div style={ {backgroundColor: color } }>
+        <div className={css.card} style={ {backgroundColor: color } }>
             <img 
             onClick={() => 
             openModal({ alt_description, imgUrl: urls.regular, user, likes, description })}

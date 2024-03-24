@@ -1,0 +1,29 @@
+.header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 64px;
+}
+
+.imput {
+    width: 360px;
+    border-radius: 20px;
+    border: none;
+    height: 42px;
+    padding-left: 12px;
+    padding-right: 48px;
+    font-size: 18px;
+  }
+
+  .searchBox {
+    position: relative;
+  }
+
+  .button {
+    position: absolute;
+    background-color: transparent;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 0;
+  }
+  
